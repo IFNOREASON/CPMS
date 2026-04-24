@@ -106,7 +106,7 @@
             </div>
             <span class="service-name">访客预约</span>
           </div>
-          <div class="service-item">
+          <div class="service-item" @click="goTo('/payment')">
             <div class="service-icon payment">
               <el-icon :size="32"><Wallet /></el-icon>
             </div>
@@ -124,7 +124,7 @@
             </div>
             <span class="service-name">公告通知</span>
           </div>
-          <div class="service-item">
+          <div class="service-item" @click="goTo('/parking')">
             <div class="service-icon parking">
               <el-icon :size="32"><Car /></el-icon>
             </div>

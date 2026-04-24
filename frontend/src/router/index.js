@@ -39,9 +39,7 @@ const routes = [
       },
       {
         path: 'visitor/list',
-        name: 'VisitorList',
-        component: () => import('@/views/visitor/VisitorList.vue'),
-        meta: { title: '预约记录', icon: 'Document' }
+        redirect: '/visitor'
       },
       {
         path: 'profile',
@@ -60,6 +58,30 @@ const routes = [
         name: 'Messages',
         component: () => import('@/views/messages/Messages.vue'),
         meta: { title: '消息中心', icon: 'Bell' }
+      },
+      {
+        path: 'payment',
+        name: 'Payment',
+        component: () => import('@/views/payment/Payment.vue'),
+        meta: { title: '物业缴费', icon: 'Wallet' }
+      },
+      {
+        path: 'payment/success',
+        name: 'PaymentSuccess',
+        component: () => import('@/views/payment/PaymentSuccess.vue'),
+        meta: { title: '支付成功' }
+      },
+      {
+        path: 'payment/list',
+        name: 'PaymentList',
+        component: () => import('@/views/payment/PaymentList.vue'),
+        meta: { title: '缴费记录', icon: 'Document' }
+      },
+      {
+        path: 'parking',
+        name: 'Parking',
+        component: () => import('@/views/parking/Parking.vue'),
+        meta: { title: '车位管理', icon: 'Car' }
       }
     ]
   }

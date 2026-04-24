@@ -41,14 +41,14 @@
             <span class="menu-text">报修记录</span>
             <el-icon class="menu-arrow"><ArrowRight /></el-icon>
           </div>
-          <div class="menu-item" @click="goTo('/visitor/list')">
+          <div class="menu-item" @click="goTo('/visitor')">
             <div class="menu-icon visitor">
               <el-icon><User /></el-icon>
             </div>
-            <span class="menu-text">预约记录</span>
+            <span class="menu-text">访客预约</span>
             <el-icon class="menu-arrow"><ArrowRight /></el-icon>
           </div>
-          <div class="menu-item">
+          <div class="menu-item" @click="goTo('/payment/list')">
             <div class="menu-icon payment">
               <el-icon><Wallet /></el-icon>
             </div>

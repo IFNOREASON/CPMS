@@ -137,7 +137,7 @@
             </div>
             <span>访客预约</span>
           </div>
-          <div class="service-item">
+          <div class="service-item" @click="goTo('/payment'); showServiceDialog = false">
             <div class="service-icon payment">
               <el-icon :size="28"><Wallet /></el-icon>
             </div>
@@ -155,7 +155,7 @@
             </div>
             <span>公告通知</span>
           </div>
-          <div class="service-item">
+          <div class="service-item" @click="goTo('/parking'); showServiceDialog = false">
             <div class="service-icon parking">
               <el-icon :size="28"><Car /></el-icon>
             </div>
@@ -188,7 +188,7 @@ const currentRoute = computed(() => {
 
 const activeTab = computed(() => {
   const path = route.path
-  if (path.includes('repair') || path.includes('visitor') || path.includes('payment')) return 'service'
+  if (path.includes('repair') || path.includes('visitor') || path.includes('payment') || path.includes('parking')) return 'service'
   if (path.includes('profile') || path.includes('messages')) return 'profile'
   return 'home'
 })
@@ -210,7 +210,7 @@ const handleCommand = (command) => {
       router.push('/repair/list')
       break
     case 'visitorList':
-      router.push('/visitor/list')
+      router.push('/visitor')
       break
     case 'logout':
       router.push('/login')
