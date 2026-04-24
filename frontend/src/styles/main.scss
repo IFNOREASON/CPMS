@@ -1,0 +1,230 @@
+@use 'variables' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: $bg-color;
+  color: $text-primary;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.page-container {
+  padding: 20px;
+  min-height: calc(100vh - #{$header-height});
+  
+  @media (max-width: $breakpoint-mobile) {
+    padding: 16px;
+    padding-bottom: calc(#{$tabbar-height} + 16px);
+  }
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  
+  .page-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: $text-primary;
+  }
+  
+  @media (max-width: $breakpoint-mobile) {
+    margin-bottom: 16px;
+    
+    .page-title {
+      font-size: 20px;
+    }
+  }
+}
+
+.card {
+  background: $bg-card;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 20px $shadow-color;
+  padding: 24px;
+  margin-bottom: 20px;
+  transition: $transition;
+  
+  &:hover {
+    box-shadow: 0 8px 30px $shadow-color;
+    transform: translateY(-2px);
+  }
+  
+  @media (max-width: $breakpoint-mobile) {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid $border-color;
+  
+  .card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: $text-primary;
+  }
+}
+
+.card-body {
+  color: $text-secondary;
+  line-height: 1.6;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, $primary-color 0%, $primary-light 100%);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: $border-radius-sm;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: $transition;
+  
+  &:hover {
+    background: linear-gradient(135deg, $primary-dark 0%, $primary-color 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px $shadow-color;
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid $primary-color;
+  color: $primary-color;
+  padding: 10px 22px;
+  border-radius: $border-radius-sm;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: $transition;
+  
+  &:hover {
+    background: $primary-color;
+    color: white;
+  }
+}
+
+:deep(.el-button--primary) {
+  background: linear-gradient(135deg, $primary-color 0%, $primary-light 100%);
+  border: none;
+  
+  &:hover {
+    background: linear-gradient(135deg, $primary-dark 0%, $primary-color 100%);
+  }
+}
+
+:deep(.el-input__wrapper) {
+  border-radius: $border-radius-sm;
+  box-shadow: none;
+  border: 1px solid $border-color;
+  
+  &:hover {
+    border-color: $primary-light;
+  }
+  
+  &.is-focus {
+    border-color: $primary-color;
+    box-shadow: 0 0 0 2px rgba($primary-color, 0.1);
+  }
+}
+
+:deep(.el-select .el-input__wrapper) {
+  border-radius: $border-radius-sm;
+}
+
+:deep(.el-textarea__inner) {
+  border-radius: $border-radius-sm;
+  border: 1px solid $border-color;
+  
+  &:hover {
+    border-color: $primary-light;
+  }
+  
+  &:focus {
+    border-color: $primary-color;
+    box-shadow: 0 0 0 2px rgba($primary-color, 0.1);
+  }
+}
+
+:deep(.el-card) {
+  border-radius: $border-radius;
+  border: none;
+  box-shadow: 0 4px 20px $shadow-color;
+}
+
+:deep(.el-menu) {
+  border-right: none;
+  
+  .el-menu-item {
+    &:hover {
+      background-color: rgba($primary-color, 0.05);
+    }
+    
+    &.is-active {
+      background-color: rgba($primary-color, 0.1);
+      color: $primary-color;
+    }
+  }
+  
+  .el-sub-menu__title {
+    &:hover {
+      background-color: rgba($primary-color, 0.05);
+    }
+  }
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
